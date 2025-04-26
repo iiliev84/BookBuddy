@@ -19,7 +19,8 @@ function Register({ setToken }) {
             setLastName("");
             setEmail("");
             setPassword("");
-            navigate("LogIn");
+            navigate('/users/login');
+            setError(error.message);
         }
         return(
             <>
@@ -48,12 +49,12 @@ function Register({ setToken }) {
                     Password: <input 
                     type="password" 
                     value={password} 
-                    minLength={6}
-                    title="Your password must be at least 6 characters long."
+                    minLength={5}
+                    title="Your password must be at least 5 characters long."
                     required 
                     onChange={(e) => setPassword(e.target.value)} />
                 </label>
-                <button>Submit</button>
+                <button  type="submit">Submit</button>
             </form>
             </>
           );

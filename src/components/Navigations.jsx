@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
  function Navigations({ token, setToken }) {
   const navigate = useNavigate("");
 
-  const handleLogOut = () => {
+  const handleLogout = () => {
     setToken(null);
     navigate("/users/login");
   };
@@ -14,7 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
     <nav className="navbar">
       <div className="links">
         {token ? (
-          <button onClick={handleLogOut}>Log Out</button>
+          <button onClick={handleLogout}>Logout</button>
         ) : (
           <>
             <Link className="link" to="/books">
@@ -25,6 +25,9 @@ import { Link, useNavigate } from "react-router-dom";
             </Link>
             <Link className="link" to="/users/login">
               Log In
+            </Link>
+            <Link className="link" to="/users/me">
+              Account
             </Link>
           </>
         )}

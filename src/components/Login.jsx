@@ -38,7 +38,7 @@ function LogIn({setToken}){
                 />
             </label>
             <br/>
-            <button onClick={() => {navigate("/books");}}>LogIn</button>
+            <button onClick={() => {navigate("/books");}}>Login</button>
         </form>
         </>
     )

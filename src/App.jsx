@@ -27,8 +27,11 @@ function App() {
       <div>
       <Navigations token={token} setToken={setToken} />
       <Routes>
-      <Route path="/users/login" element={<LogIn setToken={setToken} />} />
-      <Route path="/users/register" element={<Register setToken={setToken} />} />
+        <Route path="/books" element={<Books />} />
+        <Route path="/books/:id" element={<SingleBook />} />
+        <Route path="/users/login" element={<LogIn setToken={setToken} />} />
+        <Route path="/users/register" element={<Register setToken={setToken} />} />
+        <Route path='/users/me' element={<Account token={token} />} />
       </Routes>
     </div>
 
