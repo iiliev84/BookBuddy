@@ -21,7 +21,7 @@ import { Link, useNavigate } from "react-router-dom";
               Home
             </Link>
             <Link className="link" to="/users/register">
-              Sign Up
+              Register
             </Link>
             <Link className="link" to="/users/login">
               Log In

@@ -27,8 +27,8 @@ function App() {
       <div>
       <Navigations token={token} setToken={setToken} />
       <Routes>
-        <Route path="/" element={<Books />} />
-        
+      <Route path="/users/login" element={<LogIn setToken={setToken} />} />
+      <Route path="/users/register" element={<Register setToken={setToken} />} />
       </Routes>
     </div>
 
