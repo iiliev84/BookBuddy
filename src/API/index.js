@@ -1,7 +1,7 @@
 const API_URL = `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api`;
 
 // Register
-export async function registerUser(firstName, lastName, email, password) {
+export async function registerUser(firstname, lastname, email, password) {
     try {
         const response = await fetch(`${API_URL}/users/register`, {
         method: "POST",
@@ -9,8 +9,8 @@ export async function registerUser(firstName, lastName, email, password) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-        firstName: firstName,
-        lastName: lastName,
+        firstname: firstname,
+        lastname: lastname,
         email: email,
         password: password,
         }),
@@ -43,9 +43,10 @@ export async function loginUser(email, password) {
 }
 
 // Get your account details
-export async function fetchAccountDetails(token) {
+export async function getAccountDetails(token) {
     try {
         const response = await fetch(`${API_URL}/users/me`, {
+            method: "GET",
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
@@ -59,29 +60,29 @@ export async function fetchAccountDetails(token) {
 }
 
 // Get all books
-export async function fetchAllBooks() {
+export async function getAllBooks() {
     try {
         const response = await fetch(`${API_URL}/books`);
         const result = await response.json();
-        return result.books;
+        return result;
         } catch (error) {
         console.error(error);
         }
   } 
 
 // Get book details
-export async function fetchSingleBook(bookId) {
+export async function getSingleBook(bookId) {
     try {
         const response = await fetch(`${API_URL}/books/${bookId}`);
         const result = await response.json();  
-        return result.book;
+        return result;
         } catch (error) {
         console.error(error);
         }
 }
 
 // Get your reservations
-export async function fetchReservations(token) {
+export async function getReservations(token) {
     try {
       const response = await fetch(`${API_URL}/reservations`, {
         headers: {
@@ -97,5 +98,35 @@ export async function fetchReservations(token) {
 }
 
 // Reserve a book
+export async function reserveBook (bookId, token) {
+    try {
+      const response = await fetch(`${API}/reservations`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ bookId }),
+      });
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
 // Return a book
+export async function returnBook (bookId, token) {
+    try {
+      const response = await fetch(`${API}/reservations/${bookId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ bookId }),
+      });
+    } catch (err) {
+      console.error(`Error returning book # ${bookId} !`, err);
+    }
+  };

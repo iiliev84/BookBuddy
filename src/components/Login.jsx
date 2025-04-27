@@ -7,16 +7,37 @@ import { useNavigate } from 'react-router-dom';
 function LogIn({setToken}){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     async function handleSubmit(e){
         e.preventDefault();
-        const registeredUser = await loginUser(email, password);
-        setToken(registeredUser.token);
-        setEmail("");
-        setPassword("");
-    }
-    return(
+        setError("");
+
+        try {
+            const response = await fetch('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login', {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                email: email,
+                password: password,
+                }),
+            });
+      
+            const result = await response.json();                  
+            if (!response.ok) {
+              throw new Error("Invalid credentials." || result.error);
+            }
+            setToken(result.token);
+            navigate('/books');
+          } catch (error) {
+            setError(error.message);
+          }
+        }
+
+        return(
         <>
         <h2>Log In</h2>
         <form onSubmit={handleSubmit}>
@@ -38,9 +59,9 @@ function LogIn({setToken}){
                 />
             </label>
             <br/>
-            <button onClick={() => {navigate("/books");}}>Login</button>
+            <button type="submit">Login</button>
         </form>
         </>
-    )
+        )
 }
 export default LogIn

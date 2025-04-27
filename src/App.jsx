@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import bookLogo from './assets/books.png'
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Account from './components/Account';
 import Books from './components/Books';
 import LogIn from './components/Login';
@@ -19,19 +19,21 @@ function App() {
       localStorage.removeItem("token");
     }
   }, [token]);
-
+  
+ 
   return (
     <>
       <h1><img id='logo-image' src={bookLogo}/>Library App</h1>
-
       <div>
-      <Navigations token={token} setToken={setToken} />
+      <Navigations token={token} setToken={setToken}/>
       <Routes>
+        <Route path="/" element={<Books />} />
         <Route path="/books" element={<Books />} />
-        <Route path="/books/:id" element={<SingleBook />} />
-        <Route path="/users/login" element={<LogIn setToken={setToken} />} />
-        <Route path="/users/register" element={<Register setToken={setToken} />} />
+        <Route path="/books/:id" element={<SingleBook token={token} />} />
+        <Route path='/login' element={<LogIn setToken={setToken} />} />
+        <Route path="/register" element={<Register />} />
         <Route path='/users/me' element={<Account token={token} />} />
+        <Route path='/account' element={token ? <Account token={token} /> : <Navigate to="/login" />} />
       </Routes>
     </div>
 
