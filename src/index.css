@@ -11,3 +11,30 @@ body {
 }
 
 /* Add your own custom styles here */
+
+.book-available {
+  color: green;
+  font-family: monospace;
+  font-size: large;
+  font-weight: bold;
+}
+
+.book-unavailable {
+  color: red;
+  font-family: monospace;
+  font-size: large;
+  font-weight: bold;
+}
+
+.book-unknown {
+  color: darkgoldenrod;
+  font-family: monospace;
+  font-size: large;
+  font-weight: bold;
+}
+
+.book-image {
+  height: 250px;
+  width: 200px;
+  border: solid 2px;
+}
