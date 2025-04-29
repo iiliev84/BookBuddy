@@ -10,14 +10,15 @@ function Books() {
   
     useEffect(() => {
       async function getBooks() {
-        const books = await getAllBooks();
-        setBooks(books);
+        const result = await getAllBooks();
+        setBooks(result);
       }
       getBooks();
     }, []);
   
     const filteredBooks = search
-      ? books.filter((book) => book.title.toLowerCase().includes(search.toLowerCase()))
+      ? books.filter((book) => book.author.toLowerCase().includes(search.toLowerCase()) || 
+        book.title.toLowerCase().includes(search.toLowerCase()))
       : books;
   
     async function handleBookDetails(bookId) {
@@ -28,7 +29,7 @@ function Books() {
     return (
       <>
         <div className="search">
-        <h4> Search Books By Name {" "}
+        <h4> Search Books {" "}
             <input
               type="text"
               placeholder="Search"
@@ -57,7 +58,7 @@ function Books() {
                 <button
                   className="button-details"
                   onClick={() => handleBookDetails(book.id)}
-                > Details </button>
+                >Book Details </button>
                 <br/>
                 <br/>
               </div>
