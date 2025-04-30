@@ -100,7 +100,7 @@ export async function getReservations(token) {
 // Reserve a book
 export async function reserveBook (bookId, token) {
     try {
-      const response = await fetch(`${API}/reservations`, {
+      const response = await fetch(`${API_URL}/reservations`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -117,16 +117,16 @@ export async function reserveBook (bookId, token) {
 
 // Return a book
 export async function returnBook (bookId, token) {
-    try {
-      const response = await fetch(`${API}/reservations/${bookId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ bookId }),
-      });
-    } catch (err) {
-      console.error(`Error returning book # ${bookId} !`, err);
-    }
-  };
+  try {
+    const response = await fetch(`${API_URL}/reservations/${bookId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ bookId }),
+    });
+  } catch (err) {
+    console.error(`Whoops, trouble returning book #${bookId}!`, err);
+  }
+};

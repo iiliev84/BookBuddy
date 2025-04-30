@@ -1,11 +1,13 @@
 /* TODO - add your code to create a functional React component that renders details for a single book. Fetch the book data from the provided API. You may consider conditionally rendering a 'Checkout' button for logged in users. */
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getSingleBook } from "../API";
+import { getSingleBook, reserveBook } from "../API";
 
-function SingleBook() {
+function SingleBook({token}) {
     const [book, setBook] = useState(null);
     const { id } = useParams();
+    const [reservation, setReservation] = useState(null);
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,6 +17,16 @@ function SingleBook() {
     }
     getBook();
   }, []);
+
+  const handleReserve = async (bookId) => {
+    try {
+      const result = await reserveBook(bookId, token);
+      setReservation(result);
+      navigate("/account");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   return (
     <>
@@ -34,6 +46,11 @@ function SingleBook() {
             <img className="book-image"
              src={book.coverimage}/>
           <br />
+          {token && (
+            <button onClick={() => handleReserve(book.id)} className="button-checkout">
+              Reserve Book
+            </button>
+          )}
         </div>
       )}
       <button className="button-back" onClick={() => navigate("/")}>
