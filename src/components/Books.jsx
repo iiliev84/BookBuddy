@@ -32,12 +32,12 @@ function Books() {
         <h4> Search Books {" "}
             <input
               type="text"
-              placeholder="Search"
+              placeholder="Search by author or title"
               onChange={(e) => setSearch(e.target.value)}
             />
         </h4>
         </div>
-        <div className="books">
+        <div className="books-container">
           {filteredBooks.map((book) => {
             return (
               <div key={book.id} className="all-books">

@@ -12,16 +12,16 @@ import { Link } from "react-router-dom";
   return (
     <nav className="navbar">
       <div className="nav-links">
-        <Link to='/books'>Home</Link>
+        <Link className="nav-link" to='/books' >Home</Link>
         {token ? (
           <>
-            <Link to='/account'>Account</Link>
+            <Link className="nav-link" to='/account'>Account</Link>
             <button onClick={handleLogout} >Logout</button>
           </>
         ) : (
           <>
-            <Link to='/login'>Login</Link>
-            <Link to='/register'>Register</Link>
+            <Link className="nav-link" to='/login'>Login</Link>
+            <Link className="nav-link" to='/register'>Register</Link>
           </>
         )}
       </div>

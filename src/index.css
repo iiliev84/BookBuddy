@@ -12,8 +12,18 @@ body {
 
 /* Add your own custom styles here */
 
+.register-container, .login-container {
+  display: block;
+  text-align: center;
+  padding: 40px;
+  background-color: rgb(245, 245, 145);
+  width: 207px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 7px;
+}
 
-.books {
+.books-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -77,4 +87,20 @@ body {
   gap: 5px;
   width: 15%;
   height: 385px;
+}
+
+.navbar {
+  background: linear-gradient(black , rgb(113, 106, 27), black);
+  padding: 10px;
+  font-size: medium;
+  margin: 1px;
+}
+
+.nav-link {
+  color: white;
+  padding: 10px;
+}
+
+.nav-link:hover {
+  color: rgb(217, 236, 9);
 }

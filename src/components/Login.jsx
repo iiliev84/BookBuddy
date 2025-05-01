@@ -39,6 +39,7 @@ function LogIn({setToken}){
 
         return(
         <>
+         <div className="login-container">
         <h2>Log In</h2>
         <form onSubmit={handleSubmit}>
             <label>
@@ -49,7 +50,7 @@ function LogIn({setToken}){
                     required
                 />
             </label>
-            <br/>
+            <br/><br/>
             <label>
                 Password: <input
                     name = "password"
@@ -58,9 +59,10 @@ function LogIn({setToken}){
                     required
                 />
             </label>
-            <br/>
+            <br/><br/>
             <button type="submit">Login</button>
         </form>
+        </div>
         </>
         )
 }
