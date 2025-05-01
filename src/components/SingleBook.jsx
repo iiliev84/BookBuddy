@@ -53,7 +53,7 @@ function SingleBook({token}) {
           )}
         </div>
       )}
-      <button className="button-back" onClick={() => navigate("/")}>
+      <button className="button-back" onClick={() => navigate("/books")}>
         Back
       </button>
     </>

@@ -33,22 +33,18 @@ function Account({ token }) {
     }
   };
 
-  return (
+  return(
     <>
-      {user && (
-        <div key={user.id} className="account-container">
-           <h1>Account Details</h1>
-           <h2> Hello {user.firstname} {user.lastname}</h2>
-           <p><strong>Login email:</strong> {user.email}</p>
-          {!token ? (
-            <div>
-              <h2>No Reserved Books</h2>
-            </div>
-          ) : (
-            <div>
-              <h2>Reserved Books</h2>
-              {user.reservations.map((book) => (
-                <div key={book.id} className="reservations-container">
+    <div>
+     {user ? (
+    <>
+      <h1>Account Details</h1>
+      <h3>Name: {user.firstname} {user.lastname}</h3>
+      <p><strong>Login email:</strong> {user.email}</p>
+      <h3>Reserved Books</h3>
+      {user.reservations && user.reservations.length > 0 ? (
+        user.reservations.map((book) => (
+          <div key={book.id} className="reservations-container">
                   <p> <strong>Title:</strong> {book.title} </p>
                   <p> <strong>Author:</strong> {book.author} </p>
                   <img src={book.coverimage} className="book-image"/>
@@ -57,17 +53,22 @@ function Account({ token }) {
                     onClick={() => handleReturn(book.id, token)}>
                     Return Book
                   </button>
+                  <br />
+                  <button className="button-back" onClick={() => navigate("/books")}>
+                    Back
+                  </button>
                 </div>
-              ))}
-            </div>
-          )}
-          <button onClick={() => navigate("/")} className="button-back">
-            Back
-          </button>
-        </div>
+        ))
+      ) : (
+        <p>No reserved books</p>
       )}
     </>
-  );
-};
+  ) : (
+    <p>Loading account details...</p>
+  )}
+</div>
+</>
+)
+}
 
 export default Account
