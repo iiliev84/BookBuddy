@@ -50,7 +50,6 @@ function LogIn({setToken}){
                     required
                 />
             </label>
-            <br/><br/>
             <label>
                 Password: <input
                     name = "password"
@@ -59,7 +58,6 @@ function LogIn({setToken}){
                     required
                 />
             </label>
-            <br/><br/>
             <button type="submit">Login</button>
         </form>
         </div>

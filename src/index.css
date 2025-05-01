@@ -1,6 +1,6 @@
 body {
   font-family: Georgia, serif;
-  background-color: #f2eebd;
+  background-color: #A1D6E2;
   margin: 0;
   padding: 0;
 }
@@ -16,11 +16,19 @@ body {
   display: block;
   text-align: center;
   padding: 40px;
-  background-color: rgb(245, 245, 145);
-  width: 207px;
+  background-color: #1995AD;
+  width: 350px;
   margin: auto;
   margin-top: 50px;
   border-radius: 7px;
+}
+
+.register-container input, .login-container input {
+  width: 90%;
+  padding: 8px;
+  margin: 8px;
+  border: none;
+  border-radius: 5px;
 }
 
 .books-container {
@@ -45,7 +53,7 @@ body {
 }
 
 .book-unknown {
-  color: darkgoldenrod;
+  color: rgb(146, 105, 1);
   font-family: monospace;
   font-size: large;
   font-weight: bold;
@@ -89,10 +97,28 @@ body {
   height: 385px;
 }
 
-.navbar {
-  background: linear-gradient(black , rgb(113, 106, 27), black);
+.single-book-container {
+  display:block;
+  margin: 3px;
+  padding: 3px;
+  text-align: center;
+}
+
+.single-book {
+  display:inline-block;
+  border: 1px solid;
+  margin: 5px;
   padding: 10px;
-  font-size: medium;
+  text-align: center;
+  width:25%
+}
+
+
+.navbar {
+  background: linear-gradient(#1995AD, black,#1995AD);
+  padding: 10px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
   margin: 1px;
 }
 
@@ -102,5 +128,10 @@ body {
 }
 
 .nav-link:hover {
-  color: rgb(217, 236, 9);
+  color: yellow;
 }
+
+h1 {
+  display:block;
+  text-align: center;
+  }

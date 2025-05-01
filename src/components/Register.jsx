@@ -55,21 +55,18 @@ function Register() {
                     required
                     onChange={(e) => setFirstName(e.target.value)} />
                 </label>
-                <br/><br/>
                 <label>
                     Last Name: <input 
                     value = {lastname}
                     required
                     onChange={(e) => setLastName(e.target.value)} />
                 </label>
-                <br/><br/>
                 <label>
                     Email: <input 
                     value = {email}
                     required
                     onChange={(e) => setEmail(e.target.value)} />
                 </label>
-                <br/><br/>
                 <label>
                     Password: <input 
                     type="password" 
@@ -79,7 +76,6 @@ function Register() {
                     required 
                     onChange={(e) => setPassword(e.target.value)} />
                 </label>
-                <br/><br/>
                 <button>Submit</button>
                 <p><button><Link to="/login">Login</Link> </button> if you have an account.</p>
             </form>

@@ -29,7 +29,7 @@ function SingleBook({token}) {
   };
 
   return (
-    <div>
+    <div className="single-book-container">
       {book && (
         <div key={book.id} className="single-book">
           <p> <strong>Title:</strong> {book.title} </p>
@@ -52,11 +52,12 @@ function SingleBook({token}) {
               Reserve Book
             </button>
           )}
+          <br />
+          <button className="button-back" onClick={() => navigate("/books")}>
+            Back
+          </button>
         </div>
       )}
-      <button className="button-back" onClick={() => navigate("/books")}>
-        Back
-      </button>
     </div>
   );
 };
