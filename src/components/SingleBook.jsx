@@ -29,19 +29,20 @@ function SingleBook({token}) {
   };
 
   return (
-    <>
+    <div>
       {book && (
-        <div key={book.id} className="singleBook">
+        <div key={book.id} className="single-book">
           <p> <strong>Title:</strong> {book.title} </p>
           <p> <strong>Author:</strong> {book.author} </p>
           <p> <strong>Description:</strong> {book.description} </p>
         <div>
+        <p> <strong>Book Status:</strong> </p>
           {book.available ? 
             <div className="book-available">Available</div>:
             book.available === false &&
             <div className="book-unavailable">Unavailable</div>}
             {book.available === null && 
-             <div  className="book-unknown">Unknown: please ask!</div>}
+            <div  className="book-unknown">Unknown: please ask!</div>}
         </div>
             <img className="book-image"
              src={book.coverimage}/>
@@ -56,7 +57,7 @@ function SingleBook({token}) {
       <button className="button-back" onClick={() => navigate("/books")}>
         Back
       </button>
-    </>
+    </div>
   );
 };
 

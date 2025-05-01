@@ -37,10 +37,10 @@ function Books() {
             />
         </h4>
         </div>
-        <div className="all-books">
+        <div className="books">
           {filteredBooks.map((book) => {
             return (
-              <div key={book.id} className="book">
+              <div key={book.id} className="all-books">
                 <h4>{book.title}</h4>
                 <h4>{book.author}</h4>
                 <div>

@@ -35,14 +35,15 @@ function Account({ token }) {
 
   return(
     <>
-    <div>
+    <div className="account-container">
      {user ? (
     <>
       <h1>Account Details</h1>
       <h3>Name: {user.firstname} {user.lastname}</h3>
       <p><strong>Login email:</strong> {user.email}</p>
-      <h3>Reserved Books</h3>
-      {user.reservations && user.reservations.length > 0 ? (
+      <br />
+      <h3>Reserved Books:</h3>
+      {user.reservations ? (
         user.reservations.map((book) => (
           <div key={book.id} className="reservations-container">
                   <p> <strong>Title:</strong> {book.title} </p>
@@ -60,7 +61,7 @@ function Account({ token }) {
                 </div>
         ))
       ) : (
-        <p>No reserved books</p>
+        <p>No reserved books!</p>
       )}
     </>
   ) : (

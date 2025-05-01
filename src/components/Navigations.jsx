@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
         setToken(null);
         localStorage.removeItem("token");
       };
-
+      
   return (
     <nav className="navbar">
       <div className="nav-links">

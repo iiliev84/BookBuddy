@@ -1,6 +1,6 @@
 body {
   font-family: Georgia, serif;
-  background-color: #f8f8f8;
+  background-color: #f2eebd;
   margin: 0;
   padding: 0;
 }
@@ -11,6 +11,14 @@ body {
 }
 
 /* Add your own custom styles here */
+
+
+.books {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 5px;
+}
 
 .book-available {
   color: green;
@@ -36,5 +44,37 @@ body {
 .book-image {
   height: 250px;
   width: 200px;
-  border: solid 2px;
+  border: 1px solid;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  color: red;
+}
+
+.all-books {
+  display:table;
+  border: 2px solid;
+  margin: 3px;
+  padding: 3px;
+  text-align: center;
+  width:14%
+}
+
+.account-container {
+  display:block;
+  text-align: center;
+}
+
+.reservations-container {
+  display:inline-block;
+  justify-content: center;
+  margin: 3px;
+  padding: 20px;
+  border: 2px solid;
+  gap: 5px;
+  width: 15%;
+  height: 385px;
 }
