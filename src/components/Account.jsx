@@ -43,7 +43,7 @@ function Account({ token }) {
       <p><strong>Login email:</strong> {user.email}</p>
       <br />
       <h3>Reserved Books:</h3>
-      {user.reservations ? (
+      {user.reservations.length > 0 ? (
         user.reservations.map((book) => (
           <div key={book.id} className="reservations-container">
                   <p> <strong>Title:</strong> {book.title} </p>
