@@ -56,7 +56,7 @@ function LogIn({setToken}){
                     required
                 />
             </label>
-            <button type="submit">Login</button>
+            <button className="login-button" type="submit">Login</button>
             <p><button><Link className="nav-link" to="/register">Register</Link> </button> if you don't have an account.</p>
         </form>
         </div>
