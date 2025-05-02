@@ -2,7 +2,7 @@
 import { loginUser } from "../API/index";
 
 import {useState} from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function LogIn({setToken}){
     const [email, setEmail] = useState("")
@@ -59,6 +59,7 @@ function LogIn({setToken}){
                 />
             </label>
             <button type="submit">Login</button>
+            <p><button><Link className="nav-link" to="/register">Register</Link> </button> if you don't have an account.</p>
         </form>
         </div>
         </>

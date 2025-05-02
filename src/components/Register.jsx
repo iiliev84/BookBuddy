@@ -77,7 +77,7 @@ function Register() {
                     onChange={(e) => setPassword(e.target.value)} />
                 </label>
                 <button>Submit</button>
-                <p><button><Link to="/login">Login</Link> </button> if you have an account.</p>
+                <p><button><Link className="nav-link"to="/login">Login</Link> </button> if you have an account.</p>
             </form>
             </div>
             </>
