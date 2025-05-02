@@ -16,7 +16,7 @@ body {
   display: block;
   text-align: center;
   padding: 40px;
-  background-color: #1995AD;
+  background-color:#66bed4;
   width: 350px;
   margin: auto;
   margin-top: 50px;
@@ -69,11 +69,12 @@ body {
   display: flex;
   justify-content: center;
   padding: 5px;
-  color: red;
+  color:#022d32;
 }
 
 .all-books {
   display:table;
+  background-color: #A9D6E5;
   border: 2px solid;
   margin: 3px;
   padding: 3px;
@@ -86,8 +87,10 @@ body {
   text-align: center;
 }
 
+
 .reservations-container {
   display:inline-block;
+  background-color: #A9D6E5;
   justify-content: center;
   margin: 3px;
   padding: 20px;
@@ -106,6 +109,7 @@ body {
 
 .single-book {
   display:inline-block;
+  background-color: #A9D6E5;
   border: 1px solid;
   margin: 5px;
   padding: 10px;
@@ -134,4 +138,18 @@ body {
 h1 {
   display:block;
   text-align: center;
+  }
+
+  button {
+    background-color: #19747E;
+    color: white;
+    border: 2px solid #07373c;
+    border-radius: 3px;
+
+  }
+
+  button:hover {
+    background-color: #2fa8b5;
+    border-color: #022d32;
+    
   }
