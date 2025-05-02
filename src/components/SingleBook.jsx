@@ -47,13 +47,13 @@ function SingleBook({token}) {
             <img className="book-image"
              src={book.coverimage}/>
           <br />
-          {token && (
-            <button className="button-checkout" onClick={() => handleReserve(book.id)} disabled={!book.available}>
-              {book.available ? "Reserve Book" : "Unavailable To Reserve"}
-            </button>
-          )}
-          <br />
-          <button className="button-back" onClick={() => navigate("/books")}>
+          {token ? (book.available ? (
+            <button className="button-checkout" onClick={() => handleReserve(book.id)}>Reserve Book</button>
+          ) : (<><p>Unavailable to Reserve!</p></>)
+        ) : (
+         <><p>Please login to Reserve!</p></>        
+        )}
+           <button className="button-back" onClick={() => navigate("/books")}>
             Back
           </button>
         </div>
