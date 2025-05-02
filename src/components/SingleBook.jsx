@@ -48,8 +48,8 @@ function SingleBook({token}) {
              src={book.coverimage}/>
           <br />
           {token && (
-            <button onClick={() => handleReserve(book.id)} className="button-checkout">
-              Reserve Book
+            <button className="button-checkout" onClick={() => handleReserve(book.id)} disabled={!book.available}>
+              {book.available ? "Reserve Book" : "Unavailable To Reserve"}
             </button>
           )}
           <br />

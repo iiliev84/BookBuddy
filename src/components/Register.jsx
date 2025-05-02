@@ -1,5 +1,5 @@
 /* TODO - add your code to create a functional React component that renders a registration form */
-import {registerUser} from "../API/index"
+
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -13,9 +13,7 @@ function Register() {
 
     async function handleSubmit(e){
         e.preventDefault();
-        setError("");
-
-        
+        setError("");        
 
         try {
             const response = await fetch('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/register', {

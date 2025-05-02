@@ -82,6 +82,10 @@ body {
   width:14%
 }
 
+.all-books:hover {
+  background-color: #4bb5d8;
+}
+
 .account-container {
   display:block;
   text-align: center;
@@ -150,5 +154,11 @@ h1 {
   button:hover {
     background-color: #2fa8b5;
     border-color: #022d32;
-    
+  }
+
+  .logout-button {
+    background-color: #19747E;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
   }

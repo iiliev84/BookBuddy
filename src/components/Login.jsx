@@ -1,6 +1,4 @@
 /* TODO - add your code to create a functional React component that renders a login form */
-import { loginUser } from "../API/index";
-
 import {useState} from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 
