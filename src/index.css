@@ -40,21 +40,21 @@ body {
 
 .book-available {
   color: green;
-  font-family: monospace;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: large;
   font-weight: bold;
 }
 
 .book-unavailable {
   color: red;
-  font-family: monospace;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: large;
-  font-weight: bold;
+  font-weight:bold;
 }
 
 .book-unknown {
   color: rgb(146, 105, 1);
-  font-family: monospace;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: large;
   font-weight: bold;
 }
@@ -133,6 +133,7 @@ body {
 .nav-link {
   color: white;
   padding: 10px;
+  text-decoration: none;
 }
 
 .nav-link:hover {
